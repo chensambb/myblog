@@ -10,7 +10,9 @@ def home(request):
     post_list = Article.objects.all()
     return render(request, 'home.html', {'post_list' : post_list})
 
-
-def detail(request):
-    post = Article.objects.all()
-    return render(request, 'test.html',{'li': post})
+def detail(request, id):
+    try:
+        post = Article.objects.get(id=id)
+    except Article.DoesNotExist:
+        raise Http404
+    return render(request, 'post.html', {'post' : post})
