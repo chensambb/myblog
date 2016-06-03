@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wellcome</title>
+</head>
+<body>
+    <table border="1">
+       <thead>
+	<tr>
+          <th>title</th>
+          <th>category</th>
+          <th>date_time</th>
+          <th>content</th>
+	</tr>
+      </thead>
+	<tbody>
+	{% for item in li %}
+	<tr>
+		<td>{{item.title}}</td>
+		<td>{{item.category}}</td>
+		<td>{{item.date_time}}</td>
+		<td>{{item.content}}</td>
+	</tr>
+	{% endfor %}
+	</tbody>
+    </table>
+</body>
+</html>
